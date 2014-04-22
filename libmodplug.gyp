@@ -39,6 +39,16 @@
       , "libmodplug-0.8.8.4/src/sndmix.cpp"
       ]
     , "defines": ["HAVE_CONFIG_H=1"]
+    , "cxxflags":
+      [ "-Wno-sizeof-pointer-memaccess"
+      , "-Wno-deprecated-register"
+      ]
+    , "xcode_settings":
+      { "WARNING_CFLAGS":
+        [ "-Wno-sizeof-pointer-memaccess"
+        , "-Wno-deprecated-register"
+        ]
+      }
     , "include_dirs":
       [ "include/darwin"
       , "libmodplug-0.8.8.4/src"
