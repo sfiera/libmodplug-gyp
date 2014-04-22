@@ -13,7 +13,6 @@
       , "libmodplug-0.8.8.4/src/load_dsm.cpp"
       , "libmodplug-0.8.8.4/src/load_far.cpp"
       , "libmodplug-0.8.8.4/src/load_it.cpp"
-      , "libmodplug-0.8.8.4/src/load_j2b.cpp"
       , "libmodplug-0.8.8.4/src/load_mdl.cpp"
       , "libmodplug-0.8.8.4/src/load_med.cpp"
       , "libmodplug-0.8.8.4/src/load_mid.cpp"
