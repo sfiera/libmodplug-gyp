@@ -38,7 +38,7 @@
       , "libmodplug-0.8.8.4/src/sndmix.cpp"
       ]
     , "defines": ["HAVE_CONFIG_H=1"]
-    , "cxxflags":
+    , "cflags":
       [ "-Wno-sizeof-pointer-memaccess"
       , "-Wno-deprecated-register"
       ]
@@ -50,6 +50,7 @@
       }
     , "include_dirs":
       [ "include/darwin"
+      , "include/linux"
       , "libmodplug-0.8.8.4/src"
       , "libmodplug-0.8.8.4/src/libmodplug"
       ]
@@ -59,6 +60,10 @@
     , "conditions":
       [ [ "OS != 'mac'"
         , { "include_dirs!": ["include/darwin"]
+          }
+        ]
+      , [ "OS != 'linux'"
+        , { "include_dirs!": ["include/linux"]
           }
         ]
       ]
