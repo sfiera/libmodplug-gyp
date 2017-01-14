@@ -1,1 +1,1 @@
-../../../libmodplug-0.8.8.4/src/modplug.h
+../../../libmodplug-0.8.8.5/src/modplug.h

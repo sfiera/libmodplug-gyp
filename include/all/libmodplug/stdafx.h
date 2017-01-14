@@ -1,1 +1,1 @@
-../../../libmodplug-0.8.8.4/src/libmodplug/stdafx.h
+../../../libmodplug-0.8.8.5/src/libmodplug/stdafx.h
