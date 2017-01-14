@@ -50,7 +50,7 @@ if (libmodplug == "bundled") {
   }
 
   config("libmodplug_public") {
-    include_dirs = [ "include/all" ]
+    include_dirs = [ "include" ]
   }
 
   config("libmodplug_private") {
@@ -60,14 +60,10 @@ if (libmodplug == "bundled") {
       "-Wno-deprecated-register",
     ]
     include_dirs = [
+      "src/$target_os",
       "libmodplug-0.8.8.5/src",
       "libmodplug-0.8.8.5/src/libmodplug",
     ]
-    if (target_os == "mac") {
-      include_dirs += [ "include/darwin" ]
-    } else if (target_os == "linux") {
-      include_dirs += [ "include/linux" ]
-    }
   }
 } else {
   import("//build/lib/pkg_config.gni")
