@@ -51,6 +51,7 @@ if (libmodplug == "bundled") {
 
   config("libmodplug_public") {
     include_dirs = [ "include" ]
+    defines = [ "MODPLUG_STATIC" ]
   }
 
   config("libmodplug_private") {
@@ -64,6 +65,10 @@ if (libmodplug == "bundled") {
       "libmodplug-0.8.8.5/src",
       "libmodplug-0.8.8.5/src/libmodplug",
     ]
+
+    if (target_os == "win") {
+      cflags += [ "-Wno-macro-redefined" ]
+    }
   }
 } else {
   import("//build/lib/pkg_config.gni")
