@@ -2251,11 +2251,11 @@ static void abc_preprocess(ABCHANDLE *h, ABCMACRO *m)
 	if( m->n ) {
 		k = m->n - m->name;
 		for( i=0; i<14; i++ ) {
-			char t[strlen(m->name) + 1];
+			char *t = static_cast<char*>(alloca(strlen(m->name) + 1));
 			strcpy(t, m->name);
 			t[k] = "CDEFGABcdefgab"[i];
 			l = strlen(m->subst);
-			char s[2 * l + 1];
+			char *s = static_cast<char*>(alloca(2 * l + 1));
 			char *p = s;
 			for( j=0; j<l; j++ ) {
 				a = m->subst[j];
