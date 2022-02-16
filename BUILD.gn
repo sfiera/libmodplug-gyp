@@ -56,19 +56,20 @@ if (libmodplug == "bundled") {
 
   config("libmodplug_private") {
     defines = [ "HAVE_CONFIG_H=1" ]
-    cflags = [
-      "-Wno-sizeof-pointer-memaccess",
-      "-Wno-deprecated-register",
-    ]
+    if (current_toolchain != "//build/lib/win:msvc") {
+      cflags = [
+        "-Wno-sizeof-pointer-memaccess",
+        "-Wno-deprecated-register",
+      ]
+      if (target_os == "win") {
+        cflags += [ "-Wno-macro-redefined" ]
+      }
+    }
     include_dirs = [
       "src/$target_os",
       "libmodplug-0.8.8.5/src",
       "libmodplug-0.8.8.5/src/libmodplug",
     ]
-
-    if (target_os == "win") {
-      cflags += [ "-Wno-macro-redefined" ]
-    }
   }
 } else {
   import("//build/lib/pkg_config.gni")
