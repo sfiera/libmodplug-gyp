@@ -60,6 +60,7 @@ if (libmodplug == "bundled") {
       cflags = [
         "-Wno-sizeof-pointer-memaccess",
         "-Wno-deprecated-register",
+        "-Wno-deprecated-declarations",
       ]
       if (target_os == "win") {
         cflags += [ "-Wno-macro-redefined" ]
